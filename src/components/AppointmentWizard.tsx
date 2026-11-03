@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, CheckCircle2, User, Phone, MessageCircle, Send, Sparkles, Building, Home, Briefcase } from 'lucide-react';
 import { PRESTATIONS_DATA } from '../data/psyHerbData';
+import { DecorativeMotifs } from './DecorativeMotifs';
 
 interface AppointmentWizardProps {
   initialPrestation?: string;
@@ -68,8 +69,11 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
   ];
 
   return (
-    <section id="rendez-vous" className="py-12 sm:py-16 bg-transparent relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="rendez-vous" className="py-12 sm:py-16 bg-transparent relative overflow-hidden">
+      {/* Motifs botaniques & santé (Feuilles, Coeur, Lotus, Psi) */}
+      <DecorativeMotifs />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-10">

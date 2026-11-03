@@ -6,6 +6,7 @@ import {
   Search, Calendar, MessageCircle, ChevronRight, Clock, MapPin, Check, Sparkles, X, ArrowRight
 } from 'lucide-react';
 import { PRESTATIONS_DATA, Prestation } from '../data/psyHerbData';
+import { DecorativeMotifs } from '../components/DecorativeMotifs';
 
 interface PrestationsPageProps {
   onNavigateTo: (page: string) => void;
@@ -146,7 +147,9 @@ export const PrestationsPage: React.FC<PrestationsPageProps> = ({
       </div>
 
       {/* Prestations Cards Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="relative overflow-hidden">
+        <DecorativeMotifs />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredList.map((prestation, index) => (
             <motion.div
@@ -237,6 +240,7 @@ export const PrestationsPage: React.FC<PrestationsPageProps> = ({
               </div>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
 

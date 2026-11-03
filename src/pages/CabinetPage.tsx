@@ -6,6 +6,7 @@ import {
   HelpCircle, Sparkles, Building
 } from 'lucide-react';
 import { CABINET_INFO } from '../data/psyHerbData';
+import { DecorativeMotifs } from '../components/DecorativeMotifs';
 
 interface CabinetPageProps {
   onNavigateTo: (page: string) => void;
@@ -144,7 +145,9 @@ export const CabinetPage: React.FC<CabinetPageProps> = ({ onNavigateTo }) => {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative overflow-hidden">
+        <DecorativeMotifs />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
 
         {/* Approche */}
         {activeTab === 'approche' && (
@@ -300,6 +303,7 @@ export const CabinetPage: React.FC<CabinetPageProps> = ({ onNavigateTo }) => {
           </motion.div>
         )}
 
+        </div>
       </div>
     </div>
   );

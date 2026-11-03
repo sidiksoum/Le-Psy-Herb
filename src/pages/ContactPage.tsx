@@ -5,6 +5,7 @@ import {
   ExternalLink, Navigation, Calendar
 } from 'lucide-react';
 import { CABINET_INFO } from '../data/psyHerbData';
+import { DecorativeMotifs } from '../components/DecorativeMotifs';
 
 interface ContactPageProps {
   onNavigateTo: (page: string) => void;
@@ -65,7 +66,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateTo }) => {
       </section>
 
       {/* Main Content Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative overflow-hidden">
+        <DecorativeMotifs />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
           {/* Left Column: Direct Info Cards & Itinerary */}
@@ -266,6 +269,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateTo }) => {
 
           </div>
 
+        </div>
         </div>
       </div>
     </div>

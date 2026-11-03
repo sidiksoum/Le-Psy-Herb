@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, RotateCcw, Heart, ShieldCheck, Sparkles } from 'lucide-react';
+import { DecorativeMotifs } from './DecorativeMotifs';
 
 export const BreathingWidget: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -45,6 +46,9 @@ export const BreathingWidget: React.FC = () => {
 
   return (
     <section id="breathing" className="py-12 sm:py-16 bg-transparent relative overflow-hidden">
+      {/* Motifs botaniques & santé (Feuilles, Coeur, Lotus, Psi) */}
+      <DecorativeMotifs />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
 
         <div className="text-center max-w-2xl mx-auto mb-8">

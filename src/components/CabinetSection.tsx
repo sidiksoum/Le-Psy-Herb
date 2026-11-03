@@ -2,12 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { UserCheck, Users, MapPin, ShieldCheck, Phone, MessageCircle, Award, CheckCircle } from 'lucide-react';
 import { CABINET_INFO } from '../data/psyHerbData';
+import { DecorativeMotifs } from './DecorativeMotifs';
 
 export const CabinetSection: React.FC = () => {
   return (
     <section id="cabinet" className="py-12 sm:py-16 bg-transparent relative overflow-hidden">
+      {/* Motifs botaniques & santé (Feuilles, Coeur, Lotus, Psi) */}
+      <DecorativeMotifs />
+
       {/* Decorative subtle ambient circle */}
-      <div className="absolute top-10 right-10 w-96 h-96 bg-white/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
