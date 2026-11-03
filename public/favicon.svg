@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B9FE1" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" rx="48" fill="url(#skyGrad)" />
+  <g fill="none" stroke="#96D65E" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M150 45 L150 210" />
+    <path d="M70 75 Q70 160 150 160 Q230 160 230 75" />
+  </g>
+  <text x="62" y="125" font-family="sans-serif" font-weight="800" font-size="52" fill="#E2F0FB">Le</text>
+  <text x="135" y="142" font-family="sans-serif" font-weight="900" font-size="94" fill="#183153">SY</text>
+  <rect x="95" y="152" width="110" height="28" rx="6" fill="#96D65E" />
+  <text x="150" y="172" font-family="sans-serif" font-weight="900" font-size="20" fill="#183153" text-anchor="middle" letter-spacing="3">HERB</text>
+  <path d="M0 220 Q75 210 150 225 Q225 240 300 220 L300 300 L0 300 Z" fill="#0C1D38" />
+  <g fill="#FFFFFF" transform="translate(18, 222) scale(0.65)">
+    <circle cx="95" cy="24" r="8" />
+    <path d="M85 36 L105 36 L102 62 L97 62 L97 48 L93 48 L93 62 L88 62 Z" />
+    <circle cx="135" cy="14" r="9" />
+    <path d="M123 28 L147 28 L144 65 L138 65 L137 46 L133 46 L132 65 L126 65 Z" />
+    <circle cx="170" cy="12" r="9" />
+    <path d="M158 26 L182 26 L180 65 L174 65 L173 45 L169 45 L168 65 L162 65 Z" />
+  </g>
+</svg>

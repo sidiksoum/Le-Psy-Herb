@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="pwaBg512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF9F5" />
+      <stop offset="100%" stop-color="#E2EBE2" />
+    </linearGradient>
+    <linearGradient id="herbGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5C8C64" />
+      <stop offset="50%" stop-color="#466F4D" />
+      <stop offset="100%" stop-color="#283B2C" />
+    </linearGradient>
+    <linearGradient id="lavenderGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B89DFB" />
+      <stop offset="100%" stop-color="#8352EC" />
+    </linearGradient>
+    <radialGradient id="auraGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#9B73F5" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#9B73F5" stop-opacity="0" />
+    </radialGradient>
+    <filter id="shadow512" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#283B2C" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#pwaBg512)"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="#CFE0D1" stroke-width="4"/>
+  <circle cx="256" cy="230" r="180" fill="url(#auraGlow)"/>
+
+  <!-- Core Botanical Leaf with Elegant Humanist Silhouette -->
+  <g filter="url(#shadow512)">
+    <path d="M256 416 C256 416, 138 336, 128 224 C118 122, 234 84, 256 84 C278 84, 394 122, 384 224 C374 336, 256 416, 256 416 Z" fill="url(#herbGrad512)"/>
+  </g>
+
+  <!-- Neural & Psychological Harmony Veins -->
+  <path d="M256 122 C256 182, 330 214, 330 278 C330 320, 298 358, 256 384" stroke="#FAF9F5" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M256 122 C256 182, 182 214, 182 278 C182 320, 214 358, 256 384" stroke="#FAF9F5" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.6"/>
+  
+  <circle cx="256" cy="196" r="26" fill="#FAF9F5"/>
+  <circle cx="320" cy="262" r="16" fill="#FAF9F5" opacity="0.9"/>
+  <circle cx="192" cy="262" r="16" fill="#FAF9F5" opacity="0.9"/>
+  
+  <!-- Mind Serenity Sparkle Gem -->
+  <circle cx="368" cy="144" r="32" fill="url(#lavenderGrad512)"/>
+  <path d="M368 128 L372 140 L384 144 L372 148 L368 160 L364 148 L352 144 L364 140 Z" fill="#FFFFFF"/>
+</svg>
+

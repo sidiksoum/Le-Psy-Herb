@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B9FE1" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#76C437" />
+      <stop offset="100%" stop-color="#1B365D" />
+    </linearGradient>
+    <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded container -->
+  <rect width="300" height="300" rx="48" fill="url(#skyGrad)" />
+  <rect x="4" y="4" width="292" height="292" rx="44" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="4"/>
+
+  <!-- Stylized Greek Letter Psi (Ψ) in Lime Green -->
+  <g fill="none" stroke="#96D65E" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <!-- Center vertical stem -->
+    <path d="M150 45 L150 210" />
+    <!-- Curved arms -->
+    <path d="M70 75 Q70 160 150 160 Q230 160 230 75" />
+  </g>
+
+  <!-- Text "Le" -->
+  <text x="62" y="125" font-family="'Poppins', sans-serif" font-weight="800" font-size="52" fill="#E2F0FB" letter-spacing="-1">Le</text>
+
+  <!-- Text "SY" -->
+  <text x="135" y="142" font-family="'Poppins', sans-serif" font-weight="900" font-size="94" fill="#183153" letter-spacing="-2">SY</text>
+
+  <!-- Banner "HERB" across -->
+  <rect x="95" y="152" width="110" height="28" rx="6" fill="#96D65E" />
+  <text x="150" y="172" font-family="'Poppins', sans-serif" font-weight="900" font-size="20" fill="#183153" text-anchor="middle" letter-spacing="3">HERB</text>
+
+  <!-- Bottom Dark Grass Ground -->
+  <path d="M0 220 Q75 210 150 225 Q225 240 300 220 L300 300 L0 300 Z" fill="#0C1D38" />
+
+  <!-- Silhouettes of Dog, Child, Family, Polyhandicap Walking Together in White -->
+  <g fill="#FFFFFF" transform="translate(18, 222) scale(0.65)">
+    <!-- Dog -->
+    <path d="M40 50 Q36 40 46 38 Q52 42 50 48 L56 50 Q62 55 60 62 L48 62 L45 54 L38 62 L32 62 L36 50 Z" />
+    <circle cx="36" cy="38" r="4" />
+    <!-- Child -->
+    <circle cx="95" cy="24" r="8" />
+    <path d="M85 36 L105 36 L102 62 L97 62 L97 48 L93 48 L93 62 L88 62 Z" />
+    <!-- Adult 1 (Holding child's hand) -->
+    <circle cx="135" cy="14" r="9" />
+    <path d="M123 28 L147 28 L144 65 L138 65 L137 46 L133 46 L132 65 L126 65 Z" />
+    <!-- Adult 2 / Parent -->
+    <circle cx="170" cy="12" r="9" />
+    <path d="M158 26 L182 26 L180 65 L174 65 L173 45 L169 45 L168 65 L162 65 Z" />
+    <!-- Polyhandicap / Assisted individual with walking cane -->
+    <circle cx="215" cy="15" r="8" />
+    <path d="M205 28 L225 28 L222 65 L217 65 L216 48 L213 48 L212 65 L207 65 Z" />
+    <line x1="228" y1="36" x2="236" y2="65" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
+
