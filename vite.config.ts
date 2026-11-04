@@ -21,21 +21,21 @@ export default defineConfig({
         categories: ['health', 'medical', 'lifestyle'],
         icons: [
           {
-            src: 'pwa-192x192.svg',
+            src: 'logo-psy-herb.png',
             sizes: '192x192',
-            type: 'image/svg+xml',
+            type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-512x512.svg',
+            src: 'logo-psy-herb.png',
             sizes: '512x512',
-            type: 'image/svg+xml',
+            type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-512x512.svg',
+            src: 'logo-psy-herb.png',
             sizes: '512x512',
-            type: 'image/svg+xml',
+            type: 'image/png',
             purpose: 'maskable'
           }
         ]

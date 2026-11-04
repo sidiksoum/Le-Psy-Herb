@@ -14,7 +14,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
 
   // High quality natural illustrations
   const slideBgImages = [
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=85",
+    "https://img.magnific.com/photos-premium/triste-patiente-souffrant-sspt-dans-therapie-cruciale-pour-sante-mentale-psychologue-depression-chagrin-apres-echec-vie-jeune-femme-traumatisee-frustree-parlant-psychologue-emotion-clinique_31965-270910.jpg?semt=ais_hybrid&w=740&q=80",
     "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=85",
     "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1920&q=85"
   ];
@@ -180,8 +180,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
                 key={s.id}
                 onClick={() => setCurrentSlide(idx)}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${currentSlide === idx
-                    ? 'w-10 bg-[#059669]'
-                    : 'w-2.5 bg-[#0D1B3E]/30 hover:bg-[#0D1B3E]/60'
+                  ? 'w-10 bg-[#059669]'
+                  : 'w-2.5 bg-[#0D1B3E]/30 hover:bg-[#0D1B3E]/60'
                   }`}
                 aria-label={`Aller au slide ${idx + 1}`}
               />
