@@ -10,8 +10,8 @@ export default defineConfig({
       injectRegister: 'auto',
       includeAssets: ['logo-psy-herb.png', 'favicon.svg', 'pwa-192x192.svg', 'pwa-512x512.svg'],
       manifest: {
-        name: 'PsyHerb — Harmonie Psychologique & Santé Naturelle',
-        short_name: 'PsyHerb',
+        name: 'Le Psy Herb — Harmonie Psychologique & Santé Naturelle',
+        short_name: 'Le Psy Herb',
         description: 'Application moderne de bien-être psychologique, phytothérapie et équilibre mental.',
         theme_color: '#38573D',
         background_color: '#FAF9F5',
