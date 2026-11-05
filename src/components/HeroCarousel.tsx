@@ -40,7 +40,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
 
   return (
     <section
-      className="relative overflow-hidden bg-psy-gradient min-h-[500px] sm:min-h-[480px] lg:min-h-[520px] flex items-center justify-center transition-all"
+      className="relative overflow-hidden bg-psy-gradient min-h-[560px] sm:min-h-[480px] lg:min-h-[520px] flex items-center justify-center transition-all"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -76,36 +76,36 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full"
             >
 
-              {/* Left Column: Textes directement sur l'image avec couleurs fortes & ombrage haute lisibilité */}
-              <div className="lg:col-span-9 xl:col-span-8 space-y-4 text-center lg:text-left py-2">
+              {/* Left Column: Textes directement sur l'image avec tailles agrandies pour mobile & lisibilité maximale */}
+              <div className="lg:col-span-9 xl:col-span-8 space-y-4 sm:space-y-4 text-center lg:text-left py-2">
 
-                {/* Pill Tag en vert vif & blanc */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black bg-[#059669] text-white shadow-lg border border-emerald-300">
-                  <Sparkles className="w-3.5 h-3.5 text-[#8EE061] fill-current" />
+                {/* Pill Tag agrandi pour mobile */}
+                <div className="inline-flex items-center gap-2 px-4.5 py-2 sm:py-1.5 rounded-full text-sm sm:text-xs font-black bg-[#059669] text-white shadow-lg border border-emerald-300">
+                  <Sparkles className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-[#8EE061] fill-current" />
                   <span className="tracking-wide">{slide.tag}</span>
                 </div>
 
-                {/* Titre principal à contraste fort (navy profond & vert franc) avec halo blanc net */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-display text-[#071329] tracking-tight leading-tight [text-shadow:_0_2px_14px_rgba(255,255,255,0.95),_0_1px_3px_rgba(255,255,255,1)]">
+                {/* Titre principal agrandi pour le mobile (text-4xl sur mobile, text-5xl/6xl sur desktop) */}
+                <h1 className="text-4xl sm:text-4xl lg:text-5xl xl:text-6xl font-black font-display text-[#071329] tracking-tight leading-[1.14] sm:leading-tight [text-shadow:_0_2px_14px_rgba(255,255,255,0.95),_0_1px_3px_rgba(255,255,255,1)]">
                   {slide.title}{' '}
                   <span className="text-[#047857] [text-shadow:_0_2px_14px_rgba(255,255,255,0.95),_0_1px_3px_rgba(255,255,255,1)]">
                     {slide.highlight}
                   </span>
                 </h1>
 
-                {/* Sous-titre à fort contraste */}
-                <p className="text-sm sm:text-base md:text-lg text-[#071329] font-black leading-relaxed max-w-2xl mx-auto lg:mx-0 [text-shadow:_0_1px_10px_rgba(255,255,255,0.95),_0_1px_2px_rgba(255,255,255,1)]">
+                {/* Sous-titre agrandi pour le mobile (text-base) */}
+                <p className="text-base sm:text-base md:text-lg text-[#071329] font-black leading-snug sm:leading-relaxed max-w-2xl mx-auto lg:mx-0 [text-shadow:_0_1px_10px_rgba(255,255,255,0.95),_0_1px_2px_rgba(255,255,255,1)]">
                   {slide.subtitle}
                 </p>
 
-                {/* Boutons d'action : nets, contrastés et élégants */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                {/* Boutons d'action : plus grands, ergonomiques et confortables pour le tactile mobile */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-3 sm:pt-2 w-full sm:w-auto">
                   {/* Button 1: Prendre un rendez-vous */}
                   <button
                     onClick={() => onNavigateTo('rendez-vous')}
-                    className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-emerald-950/30 border border-emerald-400 transition-all cursor-pointer"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3 rounded-2xl sm:rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-black text-base sm:text-sm shadow-xl shadow-emerald-950/30 border border-emerald-400 transition-all cursor-pointer"
                   >
-                    <Calendar className="w-4 h-4 text-emerald-200" />
+                    <Calendar className="w-5 h-5 sm:w-4 sm:h-4 text-emerald-200" />
                     <span>Prendre un rendez-vous</span>
                   </button>
 
@@ -114,9 +114,9 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
                     href={CABINET_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-emerald-50 text-[#059669] font-extrabold text-xs sm:text-sm border-2 border-[#059669] shadow-xl shadow-emerald-950/20 transition-all"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-6 py-4 sm:py-3 rounded-2xl sm:rounded-xl bg-white hover:bg-emerald-50 text-[#059669] font-black text-base sm:text-sm border-2 border-[#059669] shadow-xl shadow-emerald-950/20 transition-all"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#059669]" />
+                    <MessageCircle className="w-5 h-5 sm:w-4 sm:h-4 text-[#059669]" />
                     <span>WhatsApp direct</span>
                   </a>
 
@@ -127,15 +127,15 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
                       else if (slide.id === 2) onNavigateTo('cabinet');
                       else onNavigateTo('astuces');
                     }}
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/95 hover:bg-white text-[#071329] font-black text-xs sm:text-sm border border-emerald-300 shadow-md transition-colors cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-2xl sm:rounded-xl bg-white/95 hover:bg-white text-[#071329] font-black text-sm sm:text-sm border border-emerald-300 shadow-md transition-colors cursor-pointer"
                   >
                     <span>{slide.id === 1 ? 'Voir les 9 prestations' : slide.id === 2 ? 'Découvrir le cabinet' : 'Accéder aux astuces'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#059669]" />
+                    <ArrowRight className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-[#059669]" />
                   </button>
                 </div>
 
-                {/* Badges de réassurance : pastilles individuelles à fond plein et contrasté */}
-                <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 text-xs font-black text-[#071329]">
+                {/* Badges de réassurance : masqués sur mobile, visibles sur tablette et desktop */}
+                <div className="pt-3 hidden sm:flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 text-xs font-black text-[#071329]">
                   <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-emerald-300 shadow-md">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" />
                     <span>Secret médical absolu</span>
@@ -173,20 +173,21 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
         </div>
 
         {/* Carousel Bottom Indicators & Controls in readable glass pill */}
-        <div className="mt-6 flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-white/95 border border-emerald-200 shadow-md">
-          <div className="flex items-center gap-2.5">
+        <div className="mt-6 flex items-center justify-between p-2.5 sm:p-3 rounded-2xl border border-emerald-200 shadow-md">
+          <div className="flex items-center gap-2 sm:gap-2.5">
             {HERO_SLIDES.map((s, idx) => (
               <button
                 key={s.id}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${currentSlide === idx
-                  ? 'w-10 bg-[#059669]'
-                  : 'w-2.5 bg-[#0D1B3E]/30 hover:bg-[#0D1B3E]/60'
+                className={`h-3 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${currentSlide === idx
+                  ? 'w-12 sm:w-10 bg-[#059669]'
+                  : 'w-3 sm:w-2.5 bg-[#0D1B3E]/30 hover:bg-[#0D1B3E]/60'
                   }`}
                 aria-label={`Aller au slide ${idx + 1}`}
               />
             ))}
-            <span className="text-xs font-bold text-[#0D1B3E] ml-2">
+            {/* Numérotation masquée sur mobile (ex: 02 / 03), visible sur tablette et desktop */}
+            <span className="hidden sm:inline-block text-xs font-bold text-[#0D1B3E] ml-2">
               0{currentSlide + 1} / 0{HERO_SLIDES.length}
             </span>
           </div>
@@ -194,17 +195,17 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
           <div className="flex items-center gap-1.5">
             <button
               onClick={prevSlide}
-              className="p-2 rounded-xl bg-white hover:bg-emerald-50 text-[#0D1B3E] border border-emerald-300 transition-all cursor-pointer shadow-sm"
+              className="p-3 sm:p-2 rounded-xl bg-white hover:bg-emerald-50 text-[#0D1B3E] border border-emerald-300 transition-all cursor-pointer shadow-sm"
               aria-label="Slide précédent"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5 sm:w-4 sm:h-4" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-2 rounded-xl bg-white hover:bg-emerald-50 text-[#0D1B3E] border border-emerald-300 transition-all cursor-pointer shadow-sm"
+              className="p-3 sm:p-2 rounded-xl bg-white hover:bg-emerald-50 text-[#0D1B3E] border border-emerald-300 transition-all cursor-pointer shadow-sm"
               aria-label="Slide suivant"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5 sm:w-4 sm:h-4" />
             </button>
           </div>
         </div>

@@ -25,14 +25,14 @@
 /* Le Psy Herb Official Green Gradient combiné avec des motifs botaniques (feuilles, plantes, fleurs) et santé/psychologie (coeur, lotus, symbole psi) */
 .bg-psy-gradient {
   background-color: #72D984;
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.18'%3E%3C!-- 1. Feuille de plante avec nervures --%3E%3Cpath d='M30,45 C25,20 50,15 60,35 C70,15 95,20 90,45 C80,75 60,85 60,85 C60,85 40,75 30,45 Z'/%3E%3Cpath d='M60,35 L60,85'/%3E%3Cpath d='M45,45 Q60,55 75,45'/%3E%3Cpath d='M40,60 Q60,70 80,60'/%3E%3C!-- 2. Coeur et pousse de feuille (santé & psychologie) --%3E%3Cpath d='M140,35 C132,22 118,24 112,32 C106,24 92,22 84,35 C76,50 112,72 112,72 C112,72 148,50 140,35 Z'/%3E%3Cpath d='M112,48 Q120,40 126,44'/%3E%3Cpath d='M112,56 Q104,48 98,52'/%3E%3C!-- 3. Fleur de lotus / Sérénité mentale --%3E%3Cpath d='M40,130 C30,115 25,135 40,150 C55,135 50,115 40,130 Z'/%3E%3Cpath d='M28,142 C15,135 20,155 35,152'/%3E%3Cpath d='M52,142 C65,135 60,155 45,152'/%3E%3Cpath d='M25,155 Q40,162 55,155'/%3E%3C!-- 4. Rameau de feuilles médicinales (Herb) --%3E%3Cpath d='M135,110 Q145,130 130,155'/%3E%3Cpath d='M135,118 Q150,115 145,125'/%3E%3Cpath d='M138,132 Q122,130 128,140'/%3E%3Cpath d='M133,144 Q148,142 142,150'/%3E%3C!-- 5. Symbole Psi psychologique stylisé --%3E%3Cpath d='M90,120 L90,155 M75,128 C75,145 105,145 105,128' stroke-width='1.4'/%3E%3Cpath d='M90,120 Q84,112 80,118 Q86,122 90,120'/%3E%3Cpath d='M90,120 Q96,112 100,118 Q94,122 90,120'/%3E%3C/g%3E%3C/svg%3E"),
     linear-gradient(135deg, #8EE061 0%, #72D984 45%, #5ECFA7 100%);
 }
 
 .bg-psy-gradient-soft {
   background-color: #85E095;
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.14'%3E%3Cpath d='M30,45 C25,20 50,15 60,35 C70,15 95,20 90,45 C80,75 60,85 60,85 C60,85 40,75 30,45 Z'/%3E%3Cpath d='M60,35 L60,85'/%3E%3Cpath d='M140,35 C132,22 118,24 112,32 C106,24 92,22 84,35 C76,50 112,72 112,72 C112,72 148,50 140,35 Z'/%3E%3Cpath d='M40,130 C30,115 25,135 40,150 C55,135 50,115 40,130 Z'/%3E%3Cpath d='M90,120 L90,155 M75,128 C75,145 105,145 105,128' stroke-width='1.4'/%3E%3C/g%3E%3C/svg%3E"),
     linear-gradient(135deg, #A4E882 0%, #85E095 45%, #6BD8B4 100%);
 }
