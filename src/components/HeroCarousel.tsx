@@ -14,9 +14,9 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ onNavigateTo }) => {
 
   // High quality natural illustrations
   const slideBgImages = [
-    "https://img.magnific.com/photos-premium/triste-patiente-souffrant-sspt-dans-therapie-cruciale-pour-sante-mentale-psychologue-depression-chagrin-apres-echec-vie-jeune-femme-traumatisee-frustree-parlant-psychologue-emotion-clinique_31965-270910.jpg?semt=ais_hybrid&w=740&q=80",
-    "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=85",
-    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1920&q=85"
+    "https://img.magnific.com/photos-premium/profil-lateral-tete-humaine-cerveau-fond-naturel-theme-blanc-dore_1223942-28294.jpg?semt=ais_hybrid&w=740&q=80",
+    "https://img.magnific.com/photos-gratuite/figure-familiale-stethoscope-espace-copie_23-2148488223.jpg?semt=ais_hybrid&w=740&q=80",
+    "https://img.magnific.com/photos-premium/illustration-arriere-plan-medical-creee-par-technologie-ia-generative_791818-1017.jpg?semt=ais_hybrid&w=740&q=80"
   ];
 
   const nextSlide = useCallback(() => {
