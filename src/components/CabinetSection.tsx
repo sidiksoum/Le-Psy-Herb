@@ -46,7 +46,7 @@ export const CabinetSection: React.FC = () => {
               <div className="relative mx-auto w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-[#059669] via-[#8EE061] to-[#5ECFA7] shadow-sm mb-4">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+                    src="https://img.magnific.com/vecteurs-premium/icone-visage-medecin-sexe-masculin-afro-americain-noir-stethoscope_768258-728.jpg"
                     alt="Dr. KONE Sionfolo Mohamed"
                     className="w-full h-full object-cover"
                   />

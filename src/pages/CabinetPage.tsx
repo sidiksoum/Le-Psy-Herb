@@ -99,7 +99,7 @@ export const CabinetPage: React.FC<CabinetPageProps> = ({ onNavigateTo }) => {
               <div className="rounded-3xl p-5 bg-white/10 backdrop-blur-md border border-[#48C81B]/40 shadow-soft-lg text-center space-y-2">
                 <div className="w-28 h-28 rounded-full mx-auto overflow-hidden border-2 border-[#48C81B] shadow-sm">
                   <img
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+                    src="https://img.magnific.com/vecteurs-premium/icone-visage-medecin-sexe-masculin-afro-americain-noir-stethoscope_768258-728.jpg"
                     alt={CABINET_INFO.praticien.nom}
                     className="w-full h-full object-cover"
                   />
@@ -149,159 +149,159 @@ export const CabinetPage: React.FC<CabinetPageProps> = ({ onNavigateTo }) => {
         <DecorativeMotifs />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
 
-        {/* Approche */}
-        {activeTab === 'approche' && (
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
-                Une prise en charge intégrative et humaine
-              </h2>
-              <p className="text-sm text-[#334155] leading-relaxed">
-                Le Dr. KONE Sionfolo Mohamed privilégie une approche qui conjugue la rigueur de la psychopathologie clinique et l'écoute psycho-corporelle.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">1</div>
-                <h3 className="font-bold text-[#13284C] text-base">Compréhension globale</h3>
-                <p className="text-xs text-[#334155] leading-relaxed">
-                  Chaque symptôme (insomnie, anxiété, échec scolaire, conflit de couple) est replacé dans son histoire singulière et familiale.
+          {/* Approche */}
+          {activeTab === 'approche' && (
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
+                  Une prise en charge intégrative et humaine
+                </h2>
+                <p className="text-sm text-[#334155] leading-relaxed">
+                  Le Dr. KONE Sionfolo Mohamed privilégie une approche qui conjugue la rigueur de la psychopathologie clinique et l'écoute psycho-corporelle.
                 </p>
               </div>
 
-              <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">2</div>
-                <h3 className="font-bold text-[#13284C] text-base">Outils pragmatiques</h3>
-                <p className="text-xs text-[#334155] leading-relaxed">
-                  Entretiens de ventilation, restructuration cognitive, protocoles de désamorçage de conflits et exercices de respiration vagale.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">3</div>
-                <h3 className="font-bold text-[#13284C] text-base">Autonomie durable</h3>
-                <p className="text-xs text-[#334155] leading-relaxed">
-                  Permettre au patient de développer ses propres ressources de résilience pour éviter la dépendance au suivi psychologique.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Visite du Cabinet */}
-        {activeTab === 'visite' && (
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
-                Un environnement conçu pour le calme et la sérénité
-              </h2>
-              <p className="text-sm text-[#334155] leading-relaxed">
-                Situé dans le quartier résidentiel et paisible de Cocody Riviera 3, notre cabinet offre un cocon préservé de l'agitation d'Abidjan.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-[#13284C] text-sm">Discrétion et acoustique isolée</h4>
-                    <p className="text-xs text-[#334155]">Une salle de consultation insonorisée pour garantir la liberté totale de parole.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-[#13284C] text-sm">Espace adapté aux enfants</h4>
-                    <p className="text-xs text-[#334155]">Coin dessin, jeux symboliques et supports d'expression ludiques.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-[#13284C] text-sm">Stationnement aisé</h4>
-                    <p className="text-xs text-[#334155]">Facilité d'accès et parking sécurisé pour nos patients à la Riviera 3.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-3xl overflow-hidden border-2 border-emerald-200 shadow-soft-sm">
-                <img
-                  src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80"
-                  alt="Cadre du cabinet Le Psy Herb"
-                  className="w-full h-72 object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Éthique */}
-        {activeTab === 'ethique' && (
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
-                Déontologie et secret professionnel
-              </h2>
-              <p className="text-sm text-[#334155] leading-relaxed">
-                La relation d'aide repose avant tout sur une confiance inaltérable entre le praticien et le patient.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                <div className="flex items-center gap-2 text-[#059669] font-bold text-sm">
-                  <ShieldCheck className="w-5 h-5" />
-                  <span>Secret médical inviolable</span>
-                </div>
-                <p className="text-xs text-[#334155] leading-relaxed">
-                  Tout ce qui est formulé en séance reste strictement entre vous et le psychologue.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                <div className="flex items-center gap-2 text-blue-700 font-bold text-sm">
-                  <Sparkles className="w-5 h-5" />
-                  <span>Bienveillance et non-jugement</span>
-                </div>
-                <p className="text-xs text-[#334155] leading-relaxed">
-                  Chaque histoire de vie est accueillie avec respect, sans préjugé culturel, religieux ou moral.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* FAQ */}
-        {activeTab === 'faq' && (
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-            <div className="max-w-3xl mb-6">
-              <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-1">
-                Foire aux questions du cabinet
-              </h2>
-              <p className="text-xs sm:text-sm text-[#334155]">
-                Tout ce qu'il faut savoir avant de prendre votre premier rendez-vous.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {faqs.map((f, i) => (
-                <div key={i} className="p-5 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
-                  <h4 className="font-bold text-[#13284C] text-sm flex items-start gap-2">
-                    <span className="text-[#059669] font-black">Q.</span>
-                    <span>{f.q}</span>
-                  </h4>
-                  <p className="text-xs text-[#334155] leading-relaxed pl-5">
-                    {f.a}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">1</div>
+                  <h3 className="font-bold text-[#13284C] text-base">Compréhension globale</h3>
+                  <p className="text-xs text-[#334155] leading-relaxed">
+                    Chaque symptôme (insomnie, anxiété, échec scolaire, conflit de couple) est replacé dans son histoire singulière et familiale.
                   </p>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
+
+                <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">2</div>
+                  <h3 className="font-bold text-[#13284C] text-base">Outils pragmatiques</h3>
+                  <p className="text-xs text-[#334155] leading-relaxed">
+                    Entretiens de ventilation, restructuration cognitive, protocoles de désamorçage de conflits et exercices de respiration vagale.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#059669] flex items-center justify-center font-bold text-sm">3</div>
+                  <h3 className="font-bold text-[#13284C] text-base">Autonomie durable</h3>
+                  <p className="text-xs text-[#334155] leading-relaxed">
+                    Permettre au patient de développer ses propres ressources de résilience pour éviter la dépendance au suivi psychologique.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Visite du Cabinet */}
+          {activeTab === 'visite' && (
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
+                  Un environnement conçu pour le calme et la sérénité
+                </h2>
+                <p className="text-sm text-[#334155] leading-relaxed">
+                  Situé dans le quartier résidentiel et paisible de Cocody Riviera 3, notre cabinet offre un cocon préservé de l'agitation d'Abidjan.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-bold text-[#13284C] text-sm">Discrétion et acoustique isolée</h4>
+                      <p className="text-xs text-[#334155]">Une salle de consultation insonorisée pour garantir la liberté totale de parole.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-bold text-[#13284C] text-sm">Espace adapté aux enfants</h4>
+                      <p className="text-xs text-[#334155]">Coin dessin, jeux symboliques et supports d'expression ludiques.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-bold text-[#13284C] text-sm">Stationnement aisé</h4>
+                      <p className="text-xs text-[#334155]">Facilité d'accès et parking sécurisé pour nos patients à la Riviera 3.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-3xl overflow-hidden border-2 border-emerald-200 shadow-soft-sm">
+                  <img
+                    src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80"
+                    alt="Cadre du cabinet Le Psy Herb"
+                    className="w-full h-72 object-cover"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Éthique */}
+          {activeTab === 'ethique' && (
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+              <div className="max-w-3xl">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-2">
+                  Déontologie et secret professionnel
+                </h2>
+                <p className="text-sm text-[#334155] leading-relaxed">
+                  La relation d'aide repose avant tout sur une confiance inaltérable entre le praticien et le patient.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                  <div className="flex items-center gap-2 text-[#059669] font-bold text-sm">
+                    <ShieldCheck className="w-5 h-5" />
+                    <span>Secret médical inviolable</span>
+                  </div>
+                  <p className="text-xs text-[#334155] leading-relaxed">
+                    Tout ce qui est formulé en séance reste strictement entre vous et le psychologue.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                  <div className="flex items-center gap-2 text-blue-700 font-bold text-sm">
+                    <Sparkles className="w-5 h-5" />
+                    <span>Bienveillance et non-jugement</span>
+                  </div>
+                  <p className="text-xs text-[#334155] leading-relaxed">
+                    Chaque histoire de vie est accueillie avec respect, sans préjugé culturel, religieux ou moral.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* FAQ */}
+          {activeTab === 'faq' && (
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+              <div className="max-w-3xl mb-6">
+                <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-[#13284C] mb-1">
+                  Foire aux questions du cabinet
+                </h2>
+                <p className="text-xs sm:text-sm text-[#334155]">
+                  Tout ce qu'il faut savoir avant de prendre votre premier rendez-vous.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {faqs.map((f, i) => (
+                  <div key={i} className="p-5 rounded-3xl bg-white border border-emerald-200 shadow-sm space-y-2">
+                    <h4 className="font-bold text-[#13284C] text-sm flex items-start gap-2">
+                      <span className="text-[#059669] font-black">Q.</span>
+                      <span>{f.q}</span>
+                    </h4>
+                    <p className="text-xs text-[#334155] leading-relaxed pl-5">
+                      {f.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          )}
 
         </div>
       </div>
