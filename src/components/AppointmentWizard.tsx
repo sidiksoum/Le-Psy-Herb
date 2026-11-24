@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, CheckCircle2, User, Phone, MessageCircle, Send, Sparkles, Building, Home, Briefcase } from 'lucide-react';
+import { Calendar, CheckCircle2, User, Phone, MessageCircle, Send, Sparkles, Building, Home, Briefcase, Mail, ExternalLink, ArrowLeft } from 'lucide-react';
 import { PRESTATIONS_DATA } from '../data/psyHerbData';
 import { DecorativeMotifs } from './DecorativeMotifs';
 
@@ -19,6 +19,7 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
   const [selectedSlot, setSelectedSlot] = useState<'Matin (08h - 12h)' | 'Après-midi (14h - 17h)' | 'Fin de journée (17h - 19h)'>('Matin (08h - 12h)');
   const [fullName, setFullName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [notes, setNotes] = useState<string>('');
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
@@ -57,15 +58,37 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
   };
 
   const generateWhatsAppConfirmationLink = () => {
-    const message = `Bonjour Dr. KONE (Cabinet Le Psy Herb),\nJe souhaite confirmer ma demande de rendez-vous en ligne :\n\n• Prestation : ${selectedPrestation}\n• Lieu : ${selectedLocation}\n• Date souhaitée : ${selectedDate}\n• Créneau : ${selectedSlot}\n• Nom : ${fullName}\n• Téléphone : ${phone}${notes ? `\n• Précision : ${notes}` : ''}\n\nMerci de me recontacter pour la validation.`;
+    const message = `Bonjour Dr. KONE (Cabinet Le Psy Herb),\nJe souhaite confirmer ma demande de rendez-vous en ligne :\n\n• Prestation : ${selectedPrestation}\n• Lieu : ${selectedLocation}\n• Date souhaitée : ${selectedDate}\n• Créneau : ${selectedSlot}\n• Nom : ${fullName}\n• Téléphone : ${phone}${email ? `\n• E-mail : ${email}` : ''}${notes ? `\n• Précision : ${notes}` : ''}\n\nMerci de me recontacter pour la validation.`;
     return `https://wa.me/2250777285102?text=${encodeURIComponent(message)}`;
+  };
+
+  const generateEmailConfirmationLink = () => {
+    const subject = `Demande de rendez-vous : ${selectedPrestation} - ${fullName}`;
+    const body = `Bonjour Dr. KONE Sionfolo Mohamed,
+
+Je souhaite solliciter une prise de rendez-vous au cabinet Le Psy Herb selon les informations suivantes :
+
+• Prestation : ${selectedPrestation}
+• Lieu de consultation : ${selectedLocation} (Cocody Riviera 3)
+• Date souhaitée : ${selectedDate}
+• Créneau horaire : ${selectedSlot}
+
+Mes coordonnées :
+• Nom et prénom : ${fullName}
+• Téléphone / WhatsApp : ${phone}${email ? `\n• Adresse e-mail : ${email}` : ''}${notes ? `\n• Précision ou motif : ${notes}` : ''}
+
+Merci de me confirmer la disponibilité de ce créneau ainsi que les modalités pratiques.
+
+Bien cordialement,
+${fullName}`;
+    return `mailto:sionfolok@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const steps = [
     { num: 1, title: "01. Prestation", desc: "Choisir le soin" },
     { num: 2, title: "02. Lieu et moment", desc: "Cabinet ou privé" },
-    { num: 3, title: "03. Coordonnées", desc: "Nom et WhatsApp" },
-    { num: 4, title: "04. Confirmation", desc: "Validation" }
+    { num: 3, title: "03. Coordonnées", desc: "Nom et contact" },
+    { num: 4, title: "04. Confirmation", desc: "Choix d'envoi" }
   ];
 
   return (
@@ -335,6 +358,22 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
 
                   <div>
                     <label className="block text-xs font-bold text-[#0D1B3E] mb-1">
+                      Adresse e-mail (facultative)
+                    </label>
+                    <div className="relative">
+                      <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                      <input
+                        type="email"
+                        placeholder="exemple@domaine.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-emerald-200 bg-white text-xs sm:text-sm font-semibold text-[#0D1B3E] focus:outline-none focus:border-[#059669]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-[#0D1B3E] mb-1">
                       Motif ou précision facultative
                     </label>
                     <textarea
@@ -366,53 +405,122 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
                       className="flex items-center gap-1.5 px-6 py-2.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-xs sm:text-sm shadow-sm transition-all cursor-pointer disabled:opacity-50"
                     >
                       <Send className="w-4 h-4" />
-                      <span>Envoyer ma demande de rendez-vous</span>
+                      <span>Continuer vers le choix d'envoi →</span>
                     </button>
                   </div>
                 </motion.div>
               )}
 
-              {/* STEP 4: Confirmation */}
+              {/* STEP 4: Confirmation & Choix du canal d'envoi (WhatsApp ou E-mail) */}
               {currentStep === 4 && isSubmitted && (
                 <motion.div
                   key="step-4"
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-4 space-y-4"
+                  className="py-2 space-y-6"
                 >
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 text-[#059669] flex items-center justify-center mx-auto shadow-sm">
-                    <CheckCircle2 className="w-7 h-7" />
-                  </div>
-
-                  <div className="max-w-md mx-auto">
-                    <h3 className="text-xl font-bold font-display text-[#0D1B3E]">
-                      Demande bien enregistrée !
+                  <div className="text-center space-y-2">
+                    <div className="w-14 h-14 rounded-full bg-emerald-100 text-[#059669] flex items-center justify-center mx-auto shadow-sm">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-black font-display text-[#0D1B3E]">
+                      Votre demande est prête !
                     </h3>
-                    <p className="text-xs text-[#334155] mt-1 leading-relaxed">
-                      Merci <strong>{fullName}</strong>. Votre demande pour « <em>{selectedPrestation}</em> » le <strong>{selectedDate}</strong> ({selectedSlot}) a été transmise au <strong>Dr. KONE Sionfolo Mohamed</strong>.
+                    <p className="text-xs sm:text-sm text-[#334155] max-w-lg mx-auto leading-relaxed">
+                      Merci <strong>{fullName}</strong>. Pour finaliser et transmettre votre dossier au <strong>Dr. KONE Sionfolo Mohamed</strong>, choisissez votre canal d'envoi préféré ci-dessous :
                     </p>
                   </div>
 
-                  <div className="max-w-md mx-auto p-3 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-left space-y-1">
-                    <div className="text-[#0D1B3E] font-bold text-xs mb-1 border-b border-emerald-200 pb-0.5">
-                      Récapitulatif :
+                  {/* Recap card */}
+                  <div className="max-w-xl mx-auto p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200 text-xs text-left space-y-2">
+                    <div className="flex items-center justify-between border-b border-emerald-200 pb-2">
+                      <span className="font-bold text-[#0D1B3E] text-xs uppercase tracking-wider">
+                        Récapitulatif de votre rendez-vous
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setCurrentStep(3)}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#059669] hover:underline cursor-pointer"
+                      >
+                        <ArrowLeft className="w-3 h-3" />
+                        <span>Modifier mes informations</span>
+                      </button>
                     </div>
-                    <div><strong>Lieu :</strong> {selectedLocation} (Cocody Riviera 3)</div>
-                    <div><strong>Téléphone :</strong> {phone}</div>
-                    <div><strong>Délai de rappel :</strong> Moins de 24h ouvrées</div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-700 pt-1">
+                      <div><strong className="text-[#0D1B3E]">Prestation :</strong> {selectedPrestation}</div>
+                      <div><strong className="text-[#0D1B3E]">Lieu :</strong> {selectedLocation}</div>
+                      <div><strong className="text-[#0D1B3E]">Date :</strong> {selectedDate}</div>
+                      <div><strong className="text-[#0D1B3E]">Créneau :</strong> {selectedSlot}</div>
+                      <div><strong className="text-[#0D1B3E]">Nom :</strong> {fullName}</div>
+                      <div><strong className="text-[#0D1B3E]">Téléphone :</strong> {phone}</div>
+                      {email && <div><strong className="text-[#0D1B3E]">E-mail :</strong> {email}</div>}
+                    </div>
+
+                    {notes && (
+                      <div className="pt-1 border-t border-emerald-200/60 text-[11px] text-[#334155]">
+                        <strong className="text-[#0D1B3E]">Précision :</strong> {notes}
+                      </div>
+                    )}
                   </div>
 
-                  <div className="pt-2 max-w-md mx-auto space-y-2">
-                    <a
-                      href={generateWhatsAppConfirmationLink()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-all"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>Accélérer la validation sur WhatsApp</span>
-                    </a>
+                  {/* Channel Selection Options: WhatsApp vs. Email */}
+                  <div className="max-w-xl mx-auto">
+                    <p className="text-xs font-bold text-center text-[#0D1B3E] mb-3">
+                      Choisissez comment transmettre votre demande :
+                    </p>
 
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      {/* Option 1: WhatsApp */}
+                      <a
+                        href={generateWhatsAppConfirmationLink()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center text-center p-4 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-md hover:shadow-lg hover:brightness-105 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                          <MessageCircle className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="font-bold text-sm tracking-wide">
+                          Envoyer via WhatsApp
+                        </span>
+                        <span className="text-[11px] text-white/90 font-medium mt-1">
+                          Discussion directe au +225 07 77 28 51 02
+                        </span>
+                        <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-[10px] font-bold text-white">
+                          <span>Ouvrir WhatsApp prérempli</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </div>
+                      </a>
+
+                      {/* Option 2: Email */}
+                      <a
+                        href={generateEmailConfirmationLink()}
+                        className="group flex flex-col items-center text-center p-4 rounded-2xl bg-gradient-to-br from-[#0D1B3E] to-[#1E3A8A] text-white shadow-md hover:shadow-lg hover:brightness-105 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                          <Mail className="w-6 h-6 text-[#8EE061]" />
+                        </div>
+                        <span className="font-bold text-sm tracking-wide">
+                          Envoyer par e-mail
+                        </span>
+                        <span className="text-[11px] text-white/90 font-medium mt-1">
+                          Destinataire : sionfolok@gmail.com
+                        </span>
+                        <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-[10px] font-bold text-[#8EE061]">
+                          <span>Ouvrir ma messagerie préremplie</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </div>
+                      </a>
+                    </div>
+
+                    <p className="text-[11px] text-center text-[#334155] mt-3">
+                      ℹ️ L'objet et le corps du message sont déjà préremplis avec toutes vos indications. Vous n'avez plus qu'à cliquer sur « Envoyer ».
+                    </p>
+                  </div>
+
+                  {/* Reset action */}
+                  <div className="pt-2 text-center">
                     <button
                       type="button"
                       onClick={() => {
@@ -420,6 +528,7 @@ export const AppointmentWizard: React.FC<AppointmentWizardProps> = ({
                         setCurrentStep(1);
                         setFullName('');
                         setPhone('');
+                        setEmail('');
                         setNotes('');
                       }}
                       className="text-xs font-semibold text-[#059669] hover:underline cursor-pointer"

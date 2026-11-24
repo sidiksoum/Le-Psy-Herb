@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   ChevronRight, MapPin, Phone, Mail, Clock,
-  MessageCircle, Send,
+  MessageCircle,
   ExternalLink, Navigation, Calendar
 } from 'lucide-react';
 import { CABINET_INFO } from '../data/psyHerbData';
@@ -17,12 +17,29 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateTo }) => {
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
 
+  const [sentMethod, setSentMethod] = useState<'whatsapp' | 'email' | null>(null);
+
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    handleSendWhatsApp(e);
+  };
+
+  const handleSendWhatsApp = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     if (!name || !contactInfo || !message) return;
     const whatsappMsg = `Bonjour Dr. KONE (Cabinet Le Psy Herb),\nMessage depuis le site :\n• Nom : ${name}\n• Coordonnées : ${contactInfo}\n• Message : ${message}`;
     window.open(`https://wa.me/2250777285102?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
     setSent(true);
+    setSentMethod('whatsapp');
+  };
+
+  const handleSendEmail = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!name || !contactInfo || !message) return;
+    const subject = `Message de contact : ${name}`;
+    const body = `Bonjour Dr. KONE Sionfolo Mohamed,\n\nVous avez reçu une prise de contact depuis le site Le Psy Herb :\n\n• Nom et prénom : ${name}\n• Coordonnées : ${contactInfo}\n• Message :\n${message}\n\nBien cordialement,\n${name}`;
+    window.location.href = `mailto:sionfolok@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+    setSentMethod('email');
   };
 
   return (
@@ -221,17 +238,47 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateTo }) => {
                 </div>
 
                 {sent ? (
-                  <div className="p-3 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-bold text-center">
-                    ✓ Message prêt et ouvert sur WhatsApp pour envoi direct au praticien !
+                  <div className="p-3.5 rounded-2xl bg-emerald-100 text-emerald-900 text-xs font-bold text-center space-y-1">
+                    <div>
+                      {sentMethod === 'whatsapp'
+                        ? '✓ Votre message a été ouvert sur WhatsApp pour envoi direct au praticien !'
+                        : '✓ Votre logiciel de messagerie a été ouvert avec le courriel prérempli à sionfolok@gmail.com !'}
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setSent(false)}
+                      className="text-[11px] text-[#059669] hover:underline cursor-pointer block mx-auto pt-1"
+                    >
+                      Envoyer un autre message
+                    </button>
                   </div>
                 ) : (
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-xs sm:text-sm shadow-sm transition-all cursor-pointer"
-                  >
-                    <Send className="w-4 h-4 text-emerald-200" />
-                    <span>Envoyer mon message au secrétariat</span>
-                  </button>
+                  <div className="space-y-2 pt-1">
+                    <div className="text-xs font-semibold text-[#13284C] text-center">
+                      Choisir le mode d'envoi de votre message :
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      <button
+                        type="button"
+                        onClick={handleSendWhatsApp}
+                        disabled={!name || !contactInfo || !message}
+                        className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold text-xs shadow-sm hover:brightness-105 transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        <MessageCircle className="w-4 h-4 text-white" />
+                        <span>Envoyer via WhatsApp</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleSendEmail}
+                        disabled={!name || !contactInfo || !message}
+                        className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#0D1B3E] to-[#1E3A8A] text-white font-bold text-xs shadow-sm hover:brightness-105 transition-all cursor-pointer disabled:opacity-50"
+                      >
+                        <Mail className="w-4 h-4 text-[#8EE061]" />
+                        <span>Envoyer par e-mail</span>
+                      </button>
+                    </div>
+                  </div>
                 )}
               </form>
             </div>

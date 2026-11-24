@@ -8,32 +8,41 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      includeAssets: ['logo-psy-herb.png', 'favicon.svg', 'pwa-192x192.svg', 'pwa-512x512.svg'],
+      includeAssets: [
+        'logo-psy-herb.png',
+        'pwa-192x192.png',
+        'pwa-512x512.png',
+        'pwa-maskable-512x512.png',
+        'apple-touch-icon.png',
+        'og-image.png',
+        'og-image-square.png',
+        'favicon.svg'
+      ],
       manifest: {
-        name: 'Le Psy Herb — Harmonie Psychologique & Santé Naturelle',
+        name: "Le Psy Herb — Cabinet d'expertise psychologique",
         short_name: 'Le Psy Herb',
-        description: 'Application moderne de bien-être psychologique, phytothérapie et équilibre mental.',
-        theme_color: '#38573D',
-        background_color: '#FAF9F5',
+        description: "Cabinet d'expertise psychologique du Dr. KONE Sionfolo Mohamed à Cocody, Riviera 3.",
+        theme_color: '#0B1528',
+        background_color: '#FFFFFF',
         display: 'standalone',
         orientation: 'portrait-primary',
         lang: 'fr',
         categories: ['health', 'medical', 'lifestyle'],
         icons: [
           {
-            src: 'logo-psy-herb.png',
+            src: 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'logo-psy-herb.png',
+            src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'logo-psy-herb.png',
+            src: 'pwa-maskable-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
