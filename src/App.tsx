@@ -8,6 +8,7 @@ import { RendezVousPage } from './pages/RendezVousPage';
 import { AstucesPage } from './pages/AstucesPage';
 import { ContactPage } from './pages/ContactPage';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 import { Footer } from './components/Footer';
 
@@ -57,7 +58,7 @@ export function App() {
       />
 
       {/* 03. Rendu dynamique de la page sélectionnée */}
-      <main className="flex-1">
+      <main className="flex-1 pb-20 lg:pb-0">
         {currentPage === 'home' && (
           <HomePage
             onNavigateTo={handleNavigate}
@@ -96,12 +97,18 @@ export function App() {
       {/* 04. Pied de page institutionnel */}
       <Footer onNavigate={handleNavigate} />
 
-      {/* 05. Boutons Flottants : Prendre un RDV + WhatsApp Direct côte à côte */}
+      {/* 05. Barre de navigation mobile inférieure (style application smartphone) */}
+      <MobileBottomNav
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
+      />
+
+      {/* 06. Bouton Flottant WhatsApp - positionné au-dessus de la barre de navigation sur mobile */}
       <FloatingWhatsApp
         onOpenBooking={() => handleNavigate('rendez-vous')}
       />
 
-      {/* 06. PWA Native Install Prompt */}
+      {/* 07. PWA Native Install Prompt */}
       <PWAInstallPrompt
         deferredPrompt={deferredPrompt}
         onInstall={() => {

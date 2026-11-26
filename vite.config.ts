@@ -22,7 +22,7 @@ export default defineConfig({
         name: "Le Psy Herb — Cabinet d'expertise psychologique",
         short_name: 'Le Psy Herb',
         description: "Cabinet d'expertise psychologique du Dr. KONE Sionfolo Mohamed à Cocody, Riviera 3.",
-        theme_color: '#0B1528',
+        theme_color: '#18c06fff',
         background_color: '#FFFFFF',
         display: 'standalone',
         orientation: 'portrait-primary',

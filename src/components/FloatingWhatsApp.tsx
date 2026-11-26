@@ -11,8 +11,8 @@ export const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ onOpenBookin
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-5 right-3 sm:right-5 z-50 flex flex-col items-end gap-2">
-      
+    <div className="fixed bottom-[120px] sm:bottom-6 right-3 sm:right-6 z-50 flex flex-col items-end gap-2">
+
       {/* Quick Pre-filled Chat Preview Card */}
       <AnimatePresence>
         {isOpen && (

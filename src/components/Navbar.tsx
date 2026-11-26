@@ -12,10 +12,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Accueil', icon: <Home className="w-3.5 h-3.5" /> },
+    { id: 'home', label: 'Accueil', icon: <Home className="w-4 h-4" /> },
     { id: 'cabinet', label: 'Le cabinet' },
     { id: 'prestations', label: 'Prestations' },
-    { id: 'rendez-vous', label: 'Rendez-vous' },
     { id: 'astuces', label: 'Astuces et guides' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -65,9 +64,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 <button
                   key={item.id}
                   onClick={() => handleItemClick(item.id)}
-                  className={`px-3 py-1.5 text-xs xl:text-sm font-bold whitespace-nowrap rounded-xl transition-all cursor-pointer relative ${isActive
+                  className={`px-4 py-2 text-sm xl:text-[15px] font-black whitespace-nowrap rounded-xl transition-all cursor-pointer relative ${isActive
                       ? 'text-[#059669] bg-emerald-50 border border-emerald-300 shadow-sm'
-                      : 'text-[#334155] hover:text-[#059669] hover:bg-emerald-50/60'
+                      : 'text-[#1E293B] hover:text-[#059669] hover:bg-emerald-50/70'
                     }`}
                 >
                   <span className="flex items-center gap-1">
